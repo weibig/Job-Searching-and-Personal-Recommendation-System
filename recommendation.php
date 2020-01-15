@@ -112,7 +112,7 @@
           </div>
           <div class="col-md-5 ml-auto">
             <h2 class="text-primary mb-3">View your profile</h2>
-            <<!-- p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptates a explicabo delectus sed labore dolor enim optio odio at!</p>
+            <!-- p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptates a explicabo delectus sed labore dolor enim optio odio at!</p>
             <p class="mb-4">Adipisci dolore reprehenderit est et assumenda veritatis, ex voluptate odio consequuntur quo ipsa accusamus dicta laborum exercitationem aspernatur reiciendis perspiciatis!</p> -->
 
             <ul class="ul-check list-unstyled success">
