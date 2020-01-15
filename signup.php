@@ -30,6 +30,14 @@
   <!-- login -->
   <?php
   session_start();  // 啟用交談期
+  // 建立MySQL的資料庫連接 
+  $link = mysqli_connect("localhost","root",
+                            "","final_project")
+          or die("無法開啟MySQL資料庫連接!<br/>");
+  //送出UTF8編碼的MySQL指令
+  mysqli_query($link, 'SET NAMES utf8'); 
+
+
   $logEmail = "";  $logPwd = "";
   // echo $_POST["logEmail"];
   // echo $_POST["logPwd"];
@@ -89,12 +97,8 @@
   // 檢查是否輸入使用者名稱和密碼
   if ($logEmail != "" && $logPwd != "") {
     // echo 123;
-     // 建立MySQL的資料庫連接 
-     $link = mysqli_connect("localhost","root",
-                            "","final_project")
-          or die("無法開啟MySQL資料庫連接!<br/>");
-     //送出UTF8編碼的MySQL指令
-     mysqli_query($link, 'SET NAMES utf8'); 
+     
+     
      // 建立SQL指令字串
      $sqlLog = "SELECT * FROM user WHERE password='";
      $sqlLog.= $logPwd."' AND email='".$logEmail."'";
@@ -114,12 +118,22 @@
         // echo "</font>";
         $_SESSION["login_session"] = false;
      }
-     mysqli_close($link);  // 關閉資料庫連接  
+     
   }
-  // else if()
+  else if($signName != "" && $gender != "" &&  $signEmail != "" &&  $signTel != "" &&  $signAge != "" &&  $signPwd1 != "" && $signPwd2 != "")
+  {
+
+      
+    $sqlSign = "INSERT INTO `user`( `Name`, `Gender`, `Email`, `Telephone`, `Age`, `Password`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])"''
+
+
+      $ability1 != "" &&  $ability2 != "" && $ability3 != "" && $ability4 != "" &&  $ability5 != "" && $ability6 != "" &&  $ability7 != "" && $ability8 != "" &&  $ability9 != "" && $ability10 != ""
+  }
+
+  mysqli_close($link);  // 關閉資料庫連接  
   ?>
 
-  <div class="site-wrap">
+  <div class ="site-wrap">
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -305,7 +319,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="logEmail">Email</label> 
-                  <input name="loginEmail" type="logEmail" id="email2" class="form-control">
+                  <input name="logEmail" type="logEmail" id="email2" class="form-control">
                 </div>
               </div>
 
@@ -313,7 +327,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="pass1">Password</label> 
-                  <input name="loginPassword" type="password" id="pass3" class="form-control">
+                  <input name="logPwd" type="password" id="pass3" class="form-control">
                 </div>
               </div>
               
