@@ -32,14 +32,7 @@
   // 檢查Session變數是否存在, 表示是否已成功登入
   if ( $_SESSION["login_session"] != true ) 
     header("Location: signup.php");
-
-    $datas = array();
-    $link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
-    mysqli_query($link, "set names 'utf8'"); 
-    
-
-
-
+  echo "歡迎使用者進入網站!<br/>";
   ?>
   
   <div class="site-wrap">
@@ -69,9 +62,10 @@
                 <li class="has-children">
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
-                    <li><a href="result.php?type=jobs">Jobs</a></li>
-                    <li><a href="result.php?type=industry">Industry</a></li>
-                    <li><a href="result.php?type=company">Company</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Industry</a></li>
+                    <li><a href="#">Talents</a></li>
+                    <li><a href="#">Company</a></li>
                   </ul>
                 </li>
                 <li><a href="result.php"><span>Result List</span></a></li>
@@ -119,7 +113,7 @@
           </div>
           <div class="col-md-5 ml-auto">
             <h2 class="text-primary mb-3">View your profile</h2>
-            <!-- p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptates a explicabo delectus sed labore dolor enim optio odio at!</p>
+            <<!-- p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptates a explicabo delectus sed labore dolor enim optio odio at!</p>
             <p class="mb-4">Adipisci dolore reprehenderit est et assumenda veritatis, ex voluptate odio consequuntur quo ipsa accusamus dicta laborum exercitationem aspernatur reiciendis perspiciatis!</p> -->
 
             <ul class="ul-check list-unstyled success">

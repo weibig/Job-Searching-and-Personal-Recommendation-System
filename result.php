@@ -171,7 +171,7 @@ echo '
 </table>
               <div class="lh-content">
                 <a href="result-single.php" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="result-single.php?index='.$i.'&type='.$_GET["type"].'">'.$datas[$i][0].'</a></h3>
+                <h3><a href="result-single.php?index='.$i.'&type='.@$_GET["type"].'">'.$datas[$i][0].'</a></h3>
                 <p>'.$datas[$i][1].'</p>
                 <p>
                   <span class="icon-star text-warning"></span>
