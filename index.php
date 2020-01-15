@@ -121,12 +121,12 @@
                   <div class="col-lg-12 col-xl-3">
                     <div class="select-wrap">
                       <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                      <select class="form-control" name="" id="">
-                        <option value="">Category</option>
-                        <option value="">Jobs</option>
-                        <option value="">Industry</option>
-                        <option value="">Talents</option>
-                        <option value="">Company</option>
+                      <select class="form-control" name="Category" id="">
+                        <option> Category</option> <!-- default -->
+                        <option value="Jobs">Jobs</option>
+                        <option value="Industry">Industry</option>
+                        <option value="Talents">Talents</option>
+                        <option value="Company">Company</option>
                       </select>
                     </div>
                   </div>

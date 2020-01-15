@@ -36,6 +36,7 @@
           or die("無法開啟MySQL資料庫連接!<br/>");
   //送出UTF8編碼的MySQL指令
   mysqli_query($link, 'SET NAMES utf8'); 
+  $_SESSION["login_session"] = false;
 
 
   $logEmail = "";  $logPwd = "";
@@ -120,14 +121,22 @@
      }
      
   }
-  else if($signName != "" && $gender != "" &&  $signEmail != "" &&  $signTel != "" &&  $signAge != "" &&  $signPwd1 != "" && $signPwd2 != "")
+  else if($signName != "" && $gender != "" &&  $signEmail != "" &&  $signTel != "" &&  $signAge != "" &&  $signPwd1 != "" && $signPwd2 != "" && ($signPwd1 == $signPwd2))
   {
 
       
-    $sqlSign = "INSERT INTO `user`( `Name`, `Gender`, `Email`, `Telephone`, `Age`, `Password`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])"''
+    $sqlSign = "INSERT INTO user( Name, Gender, Email, Telephone, Age, Password) VALUES (".$signName.","$gender.",".$signEmail",".$signTel",".$signAge",".$signPwd1.")"
 
 
-      $ability1 != "" &&  $ability2 != "" && $ability3 != "" && $ability4 != "" &&  $ability5 != "" && $ability6 != "" &&  $ability7 != "" && $ability8 != "" &&  $ability9 != "" && $ability10 != ""
+    $sqlAbility = "INSERT INTO User has ability( UID, AID) VALUES (".$ability1 .",". $ability2 .",". $ability3.",". $ability4 .",". $ability5 .",". $ability6 .",".  $ability7 .",". $ability8 .",".  $ability9 .",". $ability10 .")"
+
+    if ($link->multi_query($sqlSign.$sqlAbility) === TRUE)
+      echo "註冊成功";
+  }
+
+  if($signPwd1 != $signPwd2)
+  {
+      echo "密碼輸入錯誤";
   }
 
   mysqli_close($link);  // 關閉資料庫連接  
