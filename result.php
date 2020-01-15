@@ -117,7 +117,7 @@
               <div class="col-md-8 text-center">
                 <h1>Result List</h1>
                 <?php
-                echo $_GET[type];
+                echo $_GET["type"];
                 ?>
 
                 <!-- <p data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate beatae quisquam perspiciatis adipisci ipsam quam.</p> -->
@@ -142,12 +142,12 @@
 $datas = array();
 $link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
 mysqli_query($link, "set names 'utf8'"); 
-if($_GET["type"]=="Jobs")
-  $category = "Jobs";
-else if($_GET["type"]=="Industry")
-  $category = "IndustryIID";
-else if($_GET["type"]=="Company")
-  $category = "company_information";
+if($_GET["type"]=="jobs")
+  $category = "job_vacancies";
+else if($_GET["type"]=="industry")
+  $category = "industry";
+else if($_GET["type"]=="company")
+  $category = "company";
 else
   $category = "company_information";
 
