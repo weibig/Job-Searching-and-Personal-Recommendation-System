@@ -125,10 +125,10 @@
   {
 
       
-    $sqlSign = "INSERT INTO user( Name, Gender, Email, Telephone, Age, Password) VALUES (".$signName.","$gender.",".$signEmail",".$signTel",".$signAge",".$signPwd1.")"
+    $sqlSign = "INSERT INTO user( Name, Gender, Email, Telephone, Age, Password) VALUES (".$signName.","$gender.",".$signEmail",".$signTel",".$signAge",".$signPwd1.")";
 
 
-    $sqlAbility = "INSERT INTO User has ability( UID, AID) VALUES (".$ability1 .",". $ability2 .",". $ability3.",". $ability4 .",". $ability5 .",". $ability6 .",".  $ability7 .",". $ability8 .",".  $ability9 .",". $ability10 .")"
+    $sqlAbility = "INSERT INTO User has ability( UID, AID) VALUES (".$ability1 .",". $ability2 .",". $ability3.",". $ability4 .",". $ability5 .",". $ability6 .",".  $ability7 .",". $ability8 .",".  $ability9 .",". $ability10 .")";
 
     if ($link->multi_query($sqlSign.$sqlAbility) === TRUE)
       echo "註冊成功";
