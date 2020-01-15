@@ -32,7 +32,14 @@
   // 檢查Session變數是否存在, 表示是否已成功登入
   if ( $_SESSION["login_session"] != true ) 
     header("Location: signup.php");
-  echo "歡迎使用者進入網站!<br/>";
+
+    $datas = array();
+    $link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
+    mysqli_query($link, "set names 'utf8'"); 
+    
+
+
+
   ?>
   
   <div class="site-wrap">
