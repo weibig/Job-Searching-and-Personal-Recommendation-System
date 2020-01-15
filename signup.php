@@ -27,26 +27,30 @@
     
   </head>
   <body>
+  <!-- login -->
   <?php
   session_start();  // 啟用交談期
   $name = "";  $password = "";
+  echo $_POST["email"];
+  echo $_POST["password"];
   // 取得表單欄位值
-  if ( isset($_POST["name"]) )
-     $name = $_POST["name"];
+  if ( isset($_POST["email"]) )
+     $email = $_POST["email"];
   if ( isset($_POST["password"]) )
      $password = $_POST["password"];
   // 檢查是否輸入使用者名稱和密碼
-  if ($name != "" && $password != "") {
+  if ($email != "" && $password != "") {
+    echo 123;
      // 建立MySQL的資料庫連接 
      $link = mysqli_connect("localhost","root",
-                            "1234","test")
+                            "","final_project")
           or die("無法開啟MySQL資料庫連接!<br/>");
      //送出UTF8編碼的MySQL指令
      mysqli_query($link, 'SET NAMES utf8'); 
      // 建立SQL指令字串
-     $sql = "SELECT * FROM account WHERE password='";
-     $sql.= $password."' AND name='".$name."'";
-     echo $name;
+     $sql = "SELECT * FROM user WHERE password='";
+     $sql.= $password."' AND email='".$email."'";
+     echo $email;
      echo $password;
      // 執行SQL查詢
      $result = mysqli_query($link, $sql);
@@ -214,7 +218,7 @@
 
             
 
-            <form action="#" class="p-5 bg-white" style="margin-top: -150px;">
+            <form action="/database/signup.php" class="p-5 bg-white" style="margin-top: -150px;" method="POST">
              
 
               
@@ -223,7 +227,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email2" class="form-control">
+                  <input name="email" type="email" id="email2" class="form-control">
                 </div>
               </div>
 
@@ -231,7 +235,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="pass1">Password</label> 
-                  <input type="password" id="pass3" class="form-control">
+                  <input name="password" type="password" id="pass3" class="form-control">
                 </div>
               </div>
               
