@@ -116,10 +116,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <h2 class="mb-5 text-primary">Contact us</h2>
-                  <?php
-                    $company_info = ;
-                    echo "<p>". $company_info ."</p>";
-                  ?>
+
 
                 </div>
               </div>

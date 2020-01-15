@@ -333,10 +333,6 @@
                   <input type="submit" value="Sign Up" class="btn btn-primary btn-md text-white">
                 </div>
                 <div class="col-md-12">
-                  <?php
-                  if(errormsgSign != "")
-                      echo errormsgSign;
-                  ?>
                 </div>
               </div>
 
@@ -375,10 +371,6 @@
                   <input type="submit" value="Log In" class="btn btn-primary btn-md text-white">
                 </div>
                 <div class="col-md-12">
-                   <?php
-                  if(errormsgLog != "")
-                      echo errormsgLog;
-                  ?>
                 </div>
                
               </div>
