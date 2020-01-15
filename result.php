@@ -74,14 +74,14 @@
     $datas = array();
     $link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
     mysqli_query($link, "set names 'utf8'"); 
-    if(@$_GET["type"]=="Jobs")
-      $category = "Jobs";
-    else if(@$_GET["type"]=="Industry")
-      $category = "IndustryIID";
-    else if(@$_GET["type"]=="Company")
-      $category = "company_information";
+    if(@$_GET["type"]=="jobs")
+      $category = "jobs";
+    else if(@$_GET["type"]=="industry")
+      $category = "industry";
+    else if(@$_GET["type"]=="company")
+      $category = "company";
     else
-      $category = "company_information";
+      $category = "company";
 
 
     $sql = "SELECT * FROM $category";
@@ -162,7 +162,7 @@ mysqli_close($link);  // 關閉資料庫連接
 
 
 <?php 
-for($i = 0; $i < sizeof($datas); $i++)
+for($i = 1; $i < sizeof($datas); $i++)
 echo '
             <div class="d-block d-md-flex listing-horizontal">
               <a href="result-single.php" class="img d-block" style="background-image: url(\'images/img_2.jpg\')">
@@ -171,7 +171,7 @@ echo '
 </table>
               <div class="lh-content">
                 <a href="result-single.php" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="result-single.php">'.$datas[$i][0].'</a></h3>
+                <h3><a href="result-single.php?index='.$i.'&type='.$_GET["type"].'">'.$datas[$i][0].'</a></h3>
                 <p>'.$datas[$i][1].'</p>
                 <p>
                   <span class="icon-star text-warning"></span>
@@ -187,34 +187,6 @@ echo '
 
             </div>
 ';?>
-            <?php 
-for($i = 0; $i < sizeof($datas); $i++)
-echo '
-            <div class="d-block d-md-flex listing-horizontal">
-              <a href="result-single.php" class="img d-block" style="background-image: url(\'images/img_2.jpg\')">
-                <span class="category">Restaurants</span>
-              </a>
-</table>
-              <div class="lh-content">
-                <a href="result-single.php" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="result-single.php">'.$datas[$i][0].'</a></h3>
-                <p>'.$datas[$i][1].'</p>
-                <p>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-secondary"></span>
-                  <span>(492 Reviews)</span>
-                </p>
-
-                
-              </div>
-
-            </div>
-'; ?>
-<!-- first result end -->
-
 
           </div>
 

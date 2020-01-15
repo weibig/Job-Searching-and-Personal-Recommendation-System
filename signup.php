@@ -263,27 +263,27 @@
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="name">Ability</label>
                   <br>
-                  <input name="ability1" type="checkbox" id="ability" > Male
+                  <input name="ability1" type="checkbox" id="ability" > 文書處理
                   <br>
-                  <input name="ability2" type="checkbox" id="ability" > Female
+                  <input name="ability2" type="checkbox" id="ability" > 第二外語能力
                   <br>
-                  <input name="ability3" type="checkbox" id="ability" > Male
+                  <input name="ability3" type="checkbox" id="ability" > 程式設計
                   <br>
-                  <input name="ability4" type="checkbox" id="ability" > Female
+                  <input name="ability4" type="checkbox" id="ability" > 社交參與
                   <br>
-                  <input name="ability5" type="checkbox" id="ability" > Female
+                  <input name="ability5" type="checkbox" id="ability" > 網頁設計
                 </div>
                 <div class="col-md-6 mb-3 mb-md-0">
                   <br>
-                  <input name="ability6" type="checkbox" id="ability" > Male
+                  <input name="ability6" type="checkbox" id="ability" > 美術設計
                   <br>
-                  <input name="ability7" type="checkbox" id="ability" > Female
+                  <input name="ability7" type="checkbox" id="ability" > 攝影技巧
                   <br>
-                  <input name="ability8" type="checkbox" id="ability" > Male
+                  <input name="ability8" type="checkbox" id="ability" > 邏輯判斷
                   <br>
-                  <input name="ability9" type="checkbox" id="ability" > Female
+                  <input name="ability9" type="checkbox" id="ability" > 學習能力
                   <br>
-                  <input name="ability10" type="checkbox" id="ability" > Female
+                  <input name="ability10" type="checkbox" id="ability" > 簡報能力
                 </div>
               </div>
 

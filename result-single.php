@@ -95,7 +95,28 @@
         </div>
       </div>
     </div>  
+<?php
+    $datas = array();
+    $link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
+    mysqli_query($link, "set names 'utf8'"); 
+    if(@$_GET["type"]=="jobs")
+      $category = "jobs";
+    else if(@$_GET["type"]=="industry")
+      $category = "industry";
+    else if(@$_GET["type"]=="company")
+      $category = "company";
+    else
+      $category = "company";
 
+
+    $sql = "SELECT * FROM $category";
+    $result = @mysqli_query($link, $sql);
+    $total_records = @mysqli_num_rows($result);
+    while($row = @mysqli_fetch_array($result)){
+      $datas[] = $row;
+    }
+    mysqli_close($link);  // 關閉資料庫連接   
+?>
     <div class="site-section">
       <div class="container">
         <div class="row">
@@ -104,36 +125,24 @@
             <div class="mb-5 border-bottom pb-5">
             <?php
               $company_info;
-              echo "<h3>". $company_name ."</h3>";
+              echo "<h3>". @$company ."</h3>";
             ?>
 
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-
-            <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-
-            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <h2 class="mb-5 text-primary">Contact us</h2>
-
-
-                </div>
-              </div>
-            </div>
-
-            
-
+<?php 
+$i = $_GET['index'];
+echo '
             <div class="d-block d-md-flex listing-horizontal">
-
-              <a href="#" class="img d-block" style="background-image: url('images/img_1.jpg')">
-                <span class="category">Hotels</span>
+              <a href="result-single.php" class="img d-block" style="background-image: url(\'images/img_2.jpg\')">
+                <span class="category">Restaurants</span>
               </a>
-
+            </table>
               <div class="lh-content">
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="#">Luxe Hotel</a></h3>
-                <p>West Orange, New York</p>
+                <a href="result-single.php" class="bookmark"><span class="icon-heart"></span></a>
+                <h3><a href="result-single.php">'.$datas[$i][0].'</a></h3>
+                <p>'.$datas[$i][1].'</p>
                 <p>
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-warning"></span>
@@ -143,82 +152,13 @@
                   <span>(492 Reviews)</span>
                 </p>
 
-                
               </div>
 
             </div>
+';?>
 
-            <div class="d-block d-md-flex listing-horizontal">
-
-              <a href="#" class="img d-block" style="background-image: url('images/img_3.jpg')">
-                <span class="category">Events</span>
-              </a>
-
-              <div class="lh-content">
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="#">Live Band</a></h3>
-                <p>Don St, Brooklyn, New York</p>
-                <p>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-secondary"></span>
-                  <span>(22 Reviews)</span>
-                </p>
-
-                
+                </div>
               </div>
-
-            </div>
-          </div>
-            
-            <div class="mb-5">
-              <form action="#" method="post">
-                <div class="form-group">
-                  <p>Radius around selected destination</p>
-                </div>
-                <div class="form-group">
-                  <input type="range" min="0" max="100" value="20" data-rangeslider>
-                </div>
-              </form>
-            </div>
-
-            <div class="mb-5">
-              <form action="#" method="post">
-                <div class="form-group">
-                  <p>Category 'Restaurant' is selected</p>
-                  <p>More filters</p>
-                </div>
-                <div class="form-group">
-                  <ul class="list-unstyled">
-                    <li>
-                      <label for="option1">
-                        <input type="checkbox" id="option1">
-                        Coffee
-                      </label>
-                    </li>
-                    <li>
-                      <label for="option2">
-                        <input type="checkbox" id="option2">
-                        Vegetarian
-                      </label>
-                    </li>
-                    <li>
-                      <label for="option3">
-                        <input type="checkbox" id="option3">
-                        Vegan Foods
-                      </label>
-                    </li>
-                    <li>
-                      <label for="option4">
-                        <input type="checkbox" id="option4">
-                        Sea Foods
-                      </label>
-                    </li>
-                  </ul>
-                </div>
-              </form>
             </div>
 
           </div>
