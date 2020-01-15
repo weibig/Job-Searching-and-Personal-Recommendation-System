@@ -32,7 +32,23 @@
   // 檢查Session變數是否存在, 表示是否已成功登入
   if ( $_SESSION["login_session"] != true ) 
     header("Location: signup.php");
-  echo "歡迎使用者進入網站!<br/>";
+
+  $link = mysqli_connect("localhost","root",
+                            "","final_project")
+          or die("無法開啟MySQL資料庫連接!<br/>");
+ //送出UTF8編碼的MySQL指令
+  mysqli_query($link, 'SET NAMES utf8');
+  $sqlLog = 'SELECT CID, JName FROM job_needs_ability, User_has_ability WHERE job_needs_ability.AID = User_has_ability.AID';
+     // echo $logEmail;
+     // echo $logPwd;
+     // 執行SQL查詢
+     $result = mysqli_query($link, $sqlLog);
+    while($row = mysqli_fetch_array($result)){
+      $datas[] = $row;
+
+
+    }
+
   ?>
   
   <div class="site-wrap">
@@ -62,10 +78,9 @@
                 <li class="has-children">
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Industry</a></li>
-                    <li><a href="#">Talents</a></li>
-                    <li><a href="#">Company</a></li>
+                    <li><a href="result.php?type=jobs">Jobs</a></li>
+                    <li><a href="result.php?type=industry">Industry</a></li>
+                    <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
                 <li><a href="result.php"><span>Result List</span></a></li>
@@ -83,27 +98,6 @@
       
     </header>
 
-  
-
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-
-          <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
-            
-            
-            <div class="row justify-content-center">
-              <div class="col-md-8 text-center">
-                <h1>Recommendation</h1>
-                <!-- <p data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate beatae quisquam perspiciatis adipisci ipsam quam.</p> -->
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-      </div>
-    </div>  
 
     <div class="site-section">
       <div class="container">
@@ -113,7 +107,7 @@
           </div>
           <div class="col-md-5 ml-auto">
             <h2 class="text-primary mb-3">View your profile</h2>
-            <<!-- p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptates a explicabo delectus sed labore dolor enim optio odio at!</p>
+            <!-- p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptates a explicabo delectus sed labore dolor enim optio odio at!</p>
             <p class="mb-4">Adipisci dolore reprehenderit est et assumenda veritatis, ex voluptate odio consequuntur quo ipsa accusamus dicta laborum exercitationem aspernatur reiciendis perspiciatis!</p> -->
 
             <ul class="ul-check list-unstyled success">
@@ -125,7 +119,32 @@
         </div>
       </div>
     </div>
+        <?php 
+for($i = 0; $i < sizeof($datas); $i++)
+echo '
+            <div class="d-block d-md-flex listing-horizontal">
+              <a href="result-single.php" class="img d-block" style="background-image: url(\'images/img_2.jpg\')">
+                <span class="category">Restaurants</span>
+              </a>
+</table>
+              <div class="lh-content">
+                <a href="result-single.php" class="bookmark"><span class="icon-heart"></span></a>
+                <h3><a href="result-single.php">'.$datas[$i][0].'</a></h3>
+                <p>'.$datas[$i][1].'</p>
+                <p>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-secondary"></span>
+                  <span>(492 Reviews)</span>
+                </p>
 
+                
+              </div>
+
+            </div>
+';?>
     <?php
     for($i=1;$i<=mysql_num_rows($data);$i++){
     $rs=mysql_fetch_row($data);
@@ -176,6 +195,8 @@
     <?php
       }
     ?>
+
+
 
     <div class="py-5 bg-primary">
       <div class="container">
