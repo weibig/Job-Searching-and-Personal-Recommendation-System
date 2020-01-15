@@ -57,7 +57,6 @@
                   <ul class="dropdown arrow-top"> 
                     <li><a href="result.php?type=jobs">Jobs</a></li>
                     <li><a href="result.php?type=industry">Industry</a></li>
-                    <li><a href="result.php?type=talents">Talents</a></li>
                     <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
