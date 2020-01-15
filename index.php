@@ -74,10 +74,10 @@
                 <li class="has-children">
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Industry</a></li>
-                    <li><a href="#">Talents</a></li>
-                    <li><a href="#">Company</a></li>
+                    <li><a href="result.php?type=jobs">Jobs</a></li>
+                    <li><a href="result.php?type=industry">Industry</a></li>
+                    <li><a href="result.php?type=talents">Talents</a></li>
+                    <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
                 <li><a href="result.php"><span>Result List</span></a></li>
@@ -123,10 +123,10 @@
                       <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
                       <select class="form-control" name="Category" id="">
                         <option> Category</option> <!-- default -->
-                        <option value="Jobs">Jobs</option>
-                        <option value="Industry">Industry</option>
-                        <option value="Talents">Talents</option>
-                        <option value="Company">Company</option>
+                        <option value="Jobs" href="result.php?type=jobs">Jobs</option>
+                        <option value="Industry" href="result.php?type=industry">Industry</option>
+                        <option value="Talents" href="result.php?type=talents">Talents</option>
+                        <option value="Company" href="result.php?type=company">Company</option>
                       </select>
                     </div>
                   </div>
@@ -160,29 +160,27 @@
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center border-primary">
             <h2 class="font-weight-light text-primary">Popular Searching</h2>
-<!--             <p class="color-black-opacity-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
           </div>
         </div>
-
         <div class="row align-items-stretch">
           <div class="col-sm-4 ">
-            <a href="#" class="popular-category h-100">
+            <a href="result.php?type=industry" class="popular-category h-100">
               <span class="icon mb-3"><span class="flaticon-restaurant"></span></span>
-              <span class="caption mb-2 d-block">Stores</span>
+              <span class="caption mb-2 d-block">Industry</span>
               <span class="number">1,472</span>
             </a>
           </div>
           <div class="col-sm-4">
-            <a href="#" class="popular-category h-100">
+            <a href="result.php?type=company" class="popular-category h-100">
               <span class="icon mb-3"><span class="flaticon-cutlery"></span></span>
-              <span class="caption mb-2 d-block">Restaurants</span>
+              <span class="caption mb-2 d-block">Company</span>
               <span class="number">439</span>
             </a>
           </div>
           <div class=" col-sm-4 ">
-            <a href="#" class="popular-category h-100">
+            <a href="result.php?type=jobs" class="popular-category h-100">
               <span class="icon mb-3"><span class="flaticon-bike"></span></span>
-              <span class="caption mb-2 d-block">Other</span>
+              <span class="caption mb-2 d-block">Jobs</span>
               <span class="number">692</span>
             </a>
           </div>

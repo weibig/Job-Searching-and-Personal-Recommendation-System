@@ -55,10 +55,10 @@
                 <li class="has-children">
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Industry</a></li>
-                    <li><a href="#">Talents</a></li>
-                    <li><a href="#">Company</a></li>
+                    <li><a href="result.php?type=jobs">Jobs</a></li>
+                    <li><a href="result.php?type=industry">Industry</a></li>
+                    <li><a href="result.php?type=talents">Talents</a></li>
+                    <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
                 <li class="active"><a href="result.php"><span>Result List</span></a></li>
@@ -104,7 +104,7 @@
 
             <div class="mb-5 border-bottom pb-5">
             <?php
-              $company_info = ;
+              $company_info;
               echo "<h3>". $company_name ."</h3>";
             ?>
 

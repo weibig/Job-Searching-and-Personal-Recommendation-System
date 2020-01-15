@@ -113,7 +113,17 @@
 $datas = array();
 $link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
 mysqli_query($link, "set names 'utf8'"); 
-$sql = "SELECT * FROM company";
+if($_GET["type"]=="Jobs")
+  $category = "Jobs";
+else if($_GET["type"]=="Industry")
+  $category = "IndustryIID";
+else if($_GET["type"]=="Company")
+  $category = "company_information";
+else
+  $category = "company_information";
+
+
+$sql = "SELECT * FROM $category";
 $result = mysqli_query($link, $sql);
 $total_records = mysqli_num_rows($result);
 while($row = mysqli_fetch_array($result)){
@@ -164,11 +174,11 @@ echo '
                   <div class="select-wrap">
                       <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
                       <select class="form-control" name="" id="">
-                        <option value="">All Categories</option>
-                        <option value="">Jobs</option>
-                        <option value="">Industry</option>
-                        <option value="">Talents</option>
-                        <option value="">Company</option>
+                        <option> Category</option> <!-- default -->
+                        <option value="Jobs" href="result.php?type=jobs">Jobs</option>
+                        <option value="Industry" href="result.php?type=industry">Industry</option>
+                        <option value="Talents" href="result.php?type=talents">Talents</option>
+                        <option value="Company" href="result.php?type=company">Company</option>
                       </select>
                     </div>
                 </div>
