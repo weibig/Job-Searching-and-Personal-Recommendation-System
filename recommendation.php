@@ -37,9 +37,6 @@
     $link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
     mysqli_query($link, "set names 'utf8'"); 
     
-
-
-
   ?>
   
   <div class="site-wrap">
