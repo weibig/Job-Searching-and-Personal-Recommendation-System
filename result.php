@@ -61,15 +61,8 @@
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
                     <li><a href="result.php?type=jobs">Jobs</a></li>
-<<<<<<< HEAD
                     <li><a href="result.php?type=Industry">Industry</a></li>
-                    <li><a href="result.php?type=Talents">Talents</a></li>
                     <li><a href="result.php?type=Company">Company</a></li>
-=======
-                    <li><a href="result.php?type=industry">Industry</a></li>
-                    <li><a href="result.php?type=talents">Talents</a></li>
-                    <li><a href="result.php?type=company">Company</a></li>
->>>>>>> 65ff1c88410e23987a5ab0adaafe6215014089c1
                   </ul>
                 </li>
                 <li class="active"><a href="result.php"><span>Result List</span></a></li>
@@ -121,12 +114,9 @@
           <div class="row justify-content-center">
               <div class="col-md-8 text-center">
                 <h1>Result List</h1>
-<<<<<<< HEAD
-=======
                 <?php
-                echo $_GET[type];
+                echo $_GET["type"];
                 ?>
->>>>>>> 65ff1c88410e23987a5ab0adaafe6215014089c1
 
                 <!-- <p data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate beatae quisquam perspiciatis adipisci ipsam quam.</p> -->
               </div>
@@ -145,22 +135,17 @@
           <div class="col-lg-8">
 
 
-<<<<<<< HEAD
-<!-- first result -->
-<!--             <div class="d-block d-md-flex listing-horizontal">
 
-              <a href="result-single.php" class="img d-block" style="background-image: url('images/img_2.jpg')">
-=======
 <?php
 $datas = array();
 $link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
 mysqli_query($link, "set names 'utf8'"); 
-if($_GET["type"]=="Jobs")
-  $category = "Jobs";
-else if($_GET["type"]=="Industry")
-  $category = "IndustryIID";
-else if($_GET["type"]=="Company")
-  $category = "company_information";
+if($_GET["type"]=="jobs")
+  $category = "job_vacancies";
+else if($_GET["type"]=="industry")
+  $category = "industry";
+else if($_GET["type"]=="company")
+  $category = "company";
 else
   $category = "company_information";
 
@@ -181,7 +166,6 @@ for($i = 0; $i < sizeof($datas); $i++)
 echo '
             <div class="d-block d-md-flex listing-horizontal">
               <a href="result-single.php" class="img d-block" style="background-image: url(\'images/img_2.jpg\')">
->>>>>>> 65ff1c88410e23987a5ab0adaafe6215014089c1
                 <span class="category">Restaurants</span>
               </a>
 </table>
@@ -201,8 +185,8 @@ echo '
                 
               </div>
 
-            </div> -->
-            
+            </div>
+';?>
             <?php 
 for($i = 0; $i < sizeof($datas); $i++)
 echo '
@@ -229,10 +213,8 @@ echo '
 
             </div>
 '; ?>
-<<<<<<< HEAD
 <!-- first result end -->
-=======
->>>>>>> 65ff1c88410e23987a5ab0adaafe6215014089c1
+
 
           </div>
           <div class="col-lg-3 ml-auto">
@@ -250,7 +232,6 @@ echo '
                         <option> Category</option> <!-- default -->
                         <option value="Jobs" href="result.php?type=jobs">Jobs</option>
                         <option value="Industry" href="result.php?type=industry">Industry</option>
-                        <option value="Talents" href="result.php?type=talents">Talents</option>
                         <option value="Company" href="result.php?type=company">Company</option>
                       </select>
                     </div>
