@@ -76,7 +76,6 @@
                   <ul class="dropdown arrow-top"> 
                     <li><a href="result.php?type=jobs">Jobs</a></li>
                     <li><a href="result.php?type=industry">Industry</a></li>
-                    <li><a href="result.php?type=talents">Talents</a></li>
                     <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
@@ -121,12 +120,19 @@
                   <div class="col-lg-12 col-xl-3">
                     <div class="select-wrap">
                       <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+<<<<<<< HEAD
+                      <select name="select_Catagory" class="form-control" name="Catagory" id="">
+                        <option value="eva">Jobs</option>
+                        <option value="">Industry</option>
+                        <option value="">Talents</option>
+                        <option value="">Company</option>
+=======
                       <select class="form-control" name="Category" id="">
                         <option> Category</option> <!-- default -->
                         <option value="Jobs" href="result.php?type=jobs">Jobs</option>
                         <option value="Industry" href="result.php?type=industry">Industry</option>
-                        <option value="Talents" href="result.php?type=talents">Talents</option>
                         <option value="Company" href="result.php?type=company">Company</option>
+>>>>>>> 65ff1c88410e23987a5ab0adaafe6215014089c1
                       </select>
                     </div>
                   </div>
@@ -233,7 +239,7 @@
   <script src="js/typed.js"></script>
             <script>
             var typed = new Typed('.typed-words', {
-            strings: ["Jobs"," Industry"," Talents", "Company"],
+            strings: ["Jobs"," Industry", "Company"],
             typeSpeed: 80,
             backSpeed: 80,
             backDelay: 4000,
