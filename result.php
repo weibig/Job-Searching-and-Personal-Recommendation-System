@@ -109,17 +109,33 @@
           <div class="col-lg-8">
 
 
-<!-- first result -->
-            <div class="d-block d-md-flex listing-horizontal">
+<?php
+$datas = array();
+$link = mysqli_connect("localhost","root","","final_project") or die("無法開啟MySQL資料庫連接!<br/>");
+mysqli_query($link, "set names 'utf8'"); 
+$sql = "SELECT * FROM company";
+$result = mysqli_query($link, $sql);
+$total_records = mysqli_num_rows($result);
+while($row = mysqli_fetch_array($result)){
+  $datas[] = $row;
+}
+// print_r($datas);
+mysqli_close($link);  // 關閉資料庫連接   
+?>
 
-              <a href="result-single.php" class="img d-block" style="background-image: url('images/img_2.jpg')">
+
+<?php 
+for($i = 0; $i < sizeof($datas); $i++)
+echo '
+            <div class="d-block d-md-flex listing-horizontal">
+              <a href="result-single.php" class="img d-block" style="background-image: url(\'images/img_2.jpg\')">
                 <span class="category">Restaurants</span>
               </a>
-
+</table>
               <div class="lh-content">
                 <a href="result-single.php" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="result-single.php">Jones Grill &amp; Restaurants</a></h3>
-                <p>Don St, Brooklyn, New York</p>
+                <h3><a href="result-single.php">'.$datas[$i][0].'</a></h3>
+                <p>'.$datas[$i][1].'</p>
                 <p>
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-warning"></span>
@@ -133,7 +149,7 @@
               </div>
 
             </div>
-<!-- first result end -->
+'; ?>
 
           </div>
           <div class="col-lg-3 ml-auto">
