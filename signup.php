@@ -30,17 +30,65 @@
   <!-- login -->
   <?php
   session_start();  // 啟用交談期
-  $name = "";  $password = "";
-  echo $_POST["email"];
-  echo $_POST["password"];
-  // 取得表單欄位值
-  if ( isset($_POST["email"]) )
-     $email = $_POST["email"];
-  if ( isset($_POST["password"]) )
-     $password = $_POST["password"];
+  $logEmail = "";  $logPwd = "";
+  // echo $_POST["logEmail"];
+  // echo $_POST["logPwd"];
+
+  // 取得login欄位值
+  if ( isset($_POST["logEmail"]) )
+     $logEmail = $_POST["logEmail"];
+  if ( isset($_POST["logPwd"]) )
+     $logPwd = $_POST["logPwd"];
+
+
+   $signName = "";  $gender = ""; $ability1 = "";  $ability2 = ""; $ability3 = ""; $ability4 = "";  $ability5 = ""; $ability6 = "";  $ability7 = ""; $ability8 = "";  $ability9 = ""; $ability10 = "";  $signEmail = "";  $signTel = "";  $signAge = "";  $signPwd1 = ""; $signPwd2 = ""; 
+   
+
+  // 取得signup
+  if ( isset($_POST["signName"]) )
+     $signName = $_POST["signName"];
+  if ( isset($_POST["gender"]) )
+     $gender = $_POST["gender"];
+
+  // ability
+  if ( isset($_POST["ability1"]) )
+     $ability1 = $_POST["ability1"];
+  if ( isset($_POST["ability2"]) )
+     $ability2 = $_POST["ability2"];
+  if ( isset($_POST["ability3"]) )
+     $ability3 = $_POST["ability3"];
+  if ( isset($_POST["ability4"]) )
+     $ability4 = $_POST["ability4"];
+  if ( isset($_POST["ability5"]) )
+     $ability5 = $_POST["ability5"];
+  if ( isset($_POST["ability6"]) )
+     $ability6 = $_POST["ability6"];
+     if ( isset($_POST["ability7"]) )
+     $ability7 = $_POST["ability7"];
+  if ( isset($_POST["ability8"]) )
+     $ability8 = $_POST["ability8"];
+  if ( isset($_POST["ability9"]) )
+     $ability9 = $_POST["ability9"];
+  if ( isset($_POST["ability10"]) )
+     $ability10 = $_POST["ability10"];
+
+
+
+
+  if ( isset($_POST["signEmail"]) )
+     $signEmail = $_POST["signEmail"];
+  if ( isset($_POST["signTel"]) )
+     $signTel = $_POST["signTel"];
+  if ( isset($_POST["signAge"]) )
+     $signAge = $_POST["signAge"];
+  if ( isset($_POST["signPwd1"]) )
+     $signPwd1 = $_POST["signPwd1"];
+  if ( isset($_POST["signPwd2"]) )
+     $signPwd1 = $_POST["signPwd2"];
+
   // 檢查是否輸入使用者名稱和密碼
-  if ($email != "" && $password != "") {
-    echo 123;
+  if ($logEmail != "" && $logPwd != "") {
+    // echo 123;
      // 建立MySQL的資料庫連接 
      $link = mysqli_connect("localhost","root",
                             "","final_project")
@@ -48,12 +96,12 @@
      //送出UTF8編碼的MySQL指令
      mysqli_query($link, 'SET NAMES utf8'); 
      // 建立SQL指令字串
-     $sql = "SELECT * FROM user WHERE password='";
-     $sql.= $password."' AND email='".$email."'";
-     echo $email;
-     echo $password;
+     $sqlLog = "SELECT * FROM user WHERE password='";
+     $sqlLog.= $logPwd."' AND email='".$logEmail."'";
+     // echo $logEmail;
+     // echo $logPwd;
      // 執行SQL查詢
-     $result = mysqli_query($link, $sql);
+     $result = mysqli_query($link, $sqlLog);
      $total_records = mysqli_num_rows($result);
      // 是否有查詢到使用者記錄
      if ( $total_records > 0 ) {
@@ -61,13 +109,14 @@
         $_SESSION["login_session"] = true;
         header("Location: index.php");
      } else {  // 登入失敗
-        echo "<center><font color='red'>";
-        echo "使用者名稱或密碼錯誤!<br/>";
-        echo "</font>";
+        // echo "<center><font color='red'>";
+        // echo "使用者名稱或密碼錯誤!<br/>";
+        // echo "</font>";
         $_SESSION["login_session"] = false;
      }
      mysqli_close($link);  // 關閉資料庫連接  
   }
+  // else if()
   ?>
 
   <div class="site-wrap">
@@ -153,22 +202,51 @@
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="name">Name</label>
-                  <input type="text" id="name" class="form-control">
+                  <input name="signName" type="text" id="name" class="form-control">
                 </div>
                 <div class="col-md-6">
-                  <label class="text-black" for="gender">Gender</label>
+                  <label  class="text-black" for="gender">Gender</label>
                   <br>
-                  <input type="radio" id="gender" > Male
+                  <input name="gender" type="radio" value="male" > Male
                   <br>
-                  <input type="radio" id="gender" > Female
+                  <input name="gender" type="radio" value="female" > Female
+                </div>
+              </div>
+
+              <!-- ability choose -->
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="name">Ability</label>
+                  <br>
+                  <input name="ability1" type="checkbox" id="ability" > Male
+                  <br>
+                  <input name="ability2" type="checkbox" id="ability" > Female
+                  <br>
+                  <input name="ability3" type="checkbox" id="ability" > Male
+                  <br>
+                  <input name="ability4" type="checkbox" id="ability" > Female
+                  <br>
+                  <input name="ability5" type="checkbox" id="ability" > Female
+                </div>
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <br>
+                  <input name="ability6" type="checkbox" id="ability" > Male
+                  <br>
+                  <input name="ability7" type="checkbox" id="ability" > Female
+                  <br>
+                  <input name="ability8" type="checkbox" id="ability" > Male
+                  <br>
+                  <input name="ability9" type="checkbox" id="ability" > Female
+                  <br>
+                  <input name="ability10" type="checkbox" id="ability" > Female
                 </div>
               </div>
 
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
+                  <label class="text-black" for="logEmail">Email</label> 
+                  <input name="signEmail" type="logEmail" id="logEmail" class="form-control">
                 </div>
               </div>
 
@@ -176,7 +254,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="telephone">Telephone</label> 
-                  <input type="tel" id="telephone" class="form-control">
+                  <input name="signTel" type="tel" id="telephone" class="form-control">
                 </div>
               </div>
 
@@ -184,7 +262,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="age">Age</label> 
-                  <input type="number" id="age" class="form-control">
+                  <input name="signAge" type="number" id="age" class="form-control">
                 </div>
               </div>
 
@@ -192,7 +270,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="pass1">Password</label> 
-                  <input type="password" id="pass1" class="form-control">
+                  <input name="signPwd1" type="password" id="pass1" class="form-control">
                 </div>
               </div>
               
@@ -200,7 +278,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="pass2">Re-type Password</label> 
-                  <input type="password" id="pass2" class="form-control">
+                  <input name="signPwd2" type="password" id="pass2" class="form-control">
                 </div>
               </div>
               
@@ -218,7 +296,7 @@
 
             
 
-            <form action="/database/signup.php" class="p-5 bg-white" style="margin-top: -150px;" method="POST">
+            <form action="#" class="p-5 bg-white" style="margin-top: -150px;" method="POST">
              
 
               
@@ -226,8 +304,8 @@
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input name="email" type="email" id="email2" class="form-control">
+                  <label class="text-black" for="logEmail">Email</label> 
+                  <input name="loginEmail" type="logEmail" id="email2" class="form-control">
                 </div>
               </div>
 
@@ -235,7 +313,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="pass1">Password</label> 
-                  <input name="password" type="password" id="pass3" class="form-control">
+                  <input name="loginPassword" type="password" id="pass3" class="form-control">
                 </div>
               </div>
               
