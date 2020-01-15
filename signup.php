@@ -121,7 +121,7 @@
      }
      
   }
-  else if($signName != "" && $gender != "" &&  $signEmail != "" &&  $signTel != "" &&  $signAge != "" &&  $signPwd1 != "" && $signPwd2 != "" && ($signPwd1 == $signPwd2))
+  else if($signName != "" && $gender != "" &&  $signEmail != "" &&  $signTel != "" &&  $signAge != "" &&  $signPwd1 != "" && $signPwd2 != "" && ($signPwd1 === $signPwd2))
   {
 
       
@@ -134,7 +134,7 @@
       echo "註冊成功";
   }
 
-  if($signPwd1 != $signPwd2)
+  if($signPwd1 !== $signPwd2)
   {
       echo "密碼輸入錯誤";
   }
@@ -219,7 +219,7 @@
 
             
 
-            <form action="#" class="p-5 bg-white" style="margin-top: -150px;">
+            <form action="#" class="p-5 bg-white" style="margin-top: -150px;" method="POST">
              
 
               <div class="row form-group">
