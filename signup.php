@@ -28,7 +28,7 @@
   </head>
   <body>
   <!-- login -->
-  <?php
+   <?php
   session_start();  // 啟用交談期
   // 建立MySQL的資料庫連接 
   $link = mysqli_connect("localhost","root",

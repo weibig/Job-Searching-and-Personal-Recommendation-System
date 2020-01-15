@@ -55,10 +55,10 @@
                 <li class="has-children">
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Industry</a></li>
-                    <li><a href="#">Talents</a></li>
-                    <li><a href="#">Company</a></li>
+                    <li><a href="result.php?type=jobs">Jobs</a></li>
+                    <li><a href="result.php?type=industry">Industry</a></li>
+                    <li><a href="result.php?type=talents">Talents</a></li>
+                    <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
                 <li class="active"><a href="result.php"><span>Result List</span></a></li>
@@ -88,6 +88,10 @@
             <div class="row justify-content-center">
               <div class="col-md-8 text-center">
                 <h1>Result List</h1>
+                <?php
+                echo $_GET[type];
+                ?>
+
                 <!-- <p data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate beatae quisquam perspiciatis adipisci ipsam quam.</p> -->
               </div>
             </div>
