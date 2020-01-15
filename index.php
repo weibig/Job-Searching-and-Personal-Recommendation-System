@@ -54,7 +54,7 @@
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                   <?php
-                  if($_SESSION["login_session"] = true)
+                  if($_SESSION["login_session"] == true)
                   {
 
                   ?>

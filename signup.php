@@ -188,8 +188,23 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.php"><span>Home</span></a></li>
-                <li class="has-children">
+                <?php
+                  if($_SESSION["login_session"] == true)
+                  {
+
+                  ?>
+
+                  <li class="active"><a href="index.php"><span>Welcome Back!!</span></a></li>
+
+                  <?php
+                  }else{
+                  ?>
+                  <li class="active"><a href="index.php"><span>Home</span></a></li>
+
+
+                  <?php
+                  }
+                  ?>
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
                     <li><a href="result.php?type=jobs">Jobs</a></li>
