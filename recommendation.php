@@ -62,10 +62,10 @@
                 <li class="has-children">
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Industry</a></li>
-                    <li><a href="#">Talents</a></li>
-                    <li><a href="#">Company</a></li>
+                    <li><a href="result.php?type=jobs">Jobs</a></li>
+                    <li><a href="result.php?type=industry">Industry</a></li>
+                    <li><a href="result.php?type=talents">Talents</a></li>
+                    <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
                 <li><a href="result.php"><span>Result List</span></a></li>
@@ -113,8 +113,8 @@
           </div>
           <div class="col-md-5 ml-auto">
             <h2 class="text-primary mb-3">View your profile</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptates a explicabo delectus sed labore dolor enim optio odio at!</p>
-            <p class="mb-4">Adipisci dolore reprehenderit est et assumenda veritatis, ex voluptate odio consequuntur quo ipsa accusamus dicta laborum exercitationem aspernatur reiciendis perspiciatis!</p>
+            <<!-- p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptates a explicabo delectus sed labore dolor enim optio odio at!</p>
+            <p class="mb-4">Adipisci dolore reprehenderit est et assumenda veritatis, ex voluptate odio consequuntur quo ipsa accusamus dicta laborum exercitationem aspernatur reiciendis perspiciatis!</p> -->
 
             <ul class="ul-check list-unstyled success">
               <li>Adipisci dolore reprehenderit</li>

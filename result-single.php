@@ -55,10 +55,10 @@
                 <li class="has-children">
                   <a href="recommendation.php"><span>Recommendation</span></a>
                   <ul class="dropdown arrow-top"> 
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Industry</a></li>
-                    <li><a href="#">Talents</a></li>
-                    <li><a href="#">Company</a></li>
+                    <li><a href="result.php?type=jobs">Jobs</a></li>
+                    <li><a href="result.php?type=industry">Industry</a></li>
+                    <li><a href="result.php?type=talents">Talents</a></li>
+                    <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
                 <li class="active"><a href="result.php"><span>Result List</span></a></li>
@@ -87,8 +87,7 @@
             
             <div class="row justify-content-center">
               <div class="col-md-8 text-center">
-                <h1>Jones Grill &amp; Restaurants</h1>
-                <p class="mb-0">Don St, Brooklyn, New York</p>
+                <h1>Everything you need</h1>
               </div>
             </div>
 
@@ -104,11 +103,11 @@
           <div class="col-lg-8">
 
             <div class="mb-5 border-bottom pb-5">
-              <p><img src="images/img_2.jpg" alt="Image" class="img-fluid mb-4"></p>
+            <?php
+              $company_info;
+              echo "<h3>". $company_name ."</h3>";
+            ?>
 
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-
-            <h3>Even the all-powerful</h3>
             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
 
             <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
@@ -117,36 +116,17 @@
 
               <div class="row">
                 <div class="col-md-6">
-                  <a href="#" class="btn btn-primary btn-md text-white">Contact Us</a>
+                  <h2 class="mb-5 text-primary">Contact us</h2>
+                  <?php
+                    $company_info = ;
+                    echo "<p>". $company_info ."</p>";
+                  ?>
+
                 </div>
               </div>
             </div>
 
-            <h2 class="mb-5 text-primary">More Listings</h2>
-
-            <div class="d-block d-md-flex listing-horizontal">
-
-              <a href="#" class="img d-block" style="background-image: url('images/img_2.jpg')">
-                <span class="category">Restaurants</span>
-              </a>
-
-              <div class="lh-content">
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="#">Jones Grill &amp; Restaurants</a></h3>
-                <p>Don St, Brooklyn, New York</p>
-                <p>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-secondary"></span>
-                  <span>(492 Reviews)</span>
-                </p>
-
-                
-              </div>
-
-            </div>
+            
 
             <div class="d-block d-md-flex listing-horizontal">
 
@@ -196,37 +176,6 @@
 
             </div>
           </div>
-          <div class="col-lg-3 ml-auto">
-
-            <div class="mb-5">
-              <h3 class="h5 text-black mb-3">Filters</h3>
-              <form action="#" method="post">
-                <div class="form-group">
-                  <input type="text" placeholder="What are you looking for?" class="form-control">
-                </div>
-                <div class="form-group">
-                  <div class="select-wrap">
-                      <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                      <select class="form-control" name="" id="">
-                        <option value="">All Categories</option>
-                        <option value="">Appartment</option>
-                        <option value="">Restaurant</option>
-                        <option value="">Eat &amp; Drink</option>
-                        <option value="">Events</option>
-                        <option value="">Fitness</option>
-                        <option value="">Others</option>
-                      </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                  <!-- select-wrap, .wrap-icon -->
-                  <div class="wrap-icon">
-                    <span class="icon icon-room"></span>
-                    <input type="text" placeholder="Location" class="form-control">
-                  </div>
-                </div>
-              </form>
-            </div>
             
             <div class="mb-5">
               <form action="#" method="post">
