@@ -63,8 +63,6 @@
                     <li><a href="result.php?type=jobs">Jobs</a></li>
                     <li><a href="result.php?type=Industry">Industry</a></li>
                     <li><a href="result.php?type=Company">Company</a></li>
-                    <li><a href="result.php?type=industry">Industry</a></li>
-                    <li><a href="result.php?type=company">Company</a></li>
                   </ul>
                 </li>
                 <li class="active"><a href="result.php"><span>Result List</span></a></li>

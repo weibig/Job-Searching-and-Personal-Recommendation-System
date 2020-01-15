@@ -120,15 +120,12 @@
                   <div class="col-lg-12 col-xl-3">
                     <div class="select-wrap">
                       <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                      <select name="select_Catagory" class="form-control" name="Catagory" id="">
-                        <option value="eva">Jobs</option>
-                        <option value="">Industry</option>
-                        <option value="">Company</option>
-                      <select class="form-control" name="Category" id="">
+                      <select class="form-control" name="" id="">
                         <option> Category</option> <!-- default -->
                         <option value="Jobs" href="result.php?type=jobs">Jobs</option>
                         <option value="Industry" href="result.php?type=industry">Industry</option>
                         <option value="Company" href="result.php?type=company">Company</option>
+                      </select>
                       </select>
                     </div>
                   </div>
