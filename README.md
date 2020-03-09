@@ -2,6 +2,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 
+
 ## General info
 平台由 php 撰寫的響應式網站串接 mySQL，透過 phpMyAdmin 建立完整資料庫系統，串接以下 tables:
 * ability
@@ -26,6 +27,7 @@
 
 • 搜尋結果:
 根據所選擇的標籤，資料庫會列出所有符合條件的工作機會。可進一步點選進入個別⼯作機會，看到更詳細的⼯作內容。
+
 
 ## Technologies
 Project is created with:
